@@ -1,0 +1,13 @@
+OCR解析をReceiptControllerでモックでやってしまっている
+OcrAnalyzeServiceで自作でやろうとしているけど無理だった
+OcrAnalyzeServiceでAIを呼び出して解析しようとしているけど課金が必要でコメントアウトしてある
+AIで解析結果はリクエストしていないのでどうやってレスポンス来るかは不明で結果を加工する必要がある
+
+追加支払い額の計算ロジックは未着手(要件固まり次第)
+OcrAnalyzeServiceに以下で記載
+private String getCalcAmount(/* TODO 合計金額 */) {
+    return "{計算した金額が出ます}";
+}
+
+支払ロジックは別途サービス登録(課金)が必要のため未着手
+PaymentControllerにてモックで実装
